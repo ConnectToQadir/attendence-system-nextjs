@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600&family=Poppins:wght@200;300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root{
+  --primaryClr:#1877F2;
+}
+
+.mainWithSideBar {
+  height: calc(100vh - 70px);
+  display: flex;
+  grid-template-columns: 1fr 4fr;
+}
+
+main {
+  flex-grow: 1;
+  background-color:#eee;
+  /* background-image: url(../public/images/wallpaper/4.jpg); */
+  background-size: cover;
+  background-position: center;
+  overflow: auto;
+  padding: calc(20px + 1vw);
+  box-shadow: 0px 0px 18px 1px rgba(0, 0, 0, 23%) inset;
+}
+
+main .innerMainCententWrapper {
+  height: 100%;
+}
+
+main::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+main::-webkit-scrollbar {
+  width: 7px;
+  background-color: transparent;
+}
+
+main::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #fff8;
+}
+
+*:focus {
+  outline: none;
+}
+
+/* ToopTip Style */
+
+.toolTip {
+  position: relative;
+  cursor: pointer;
+}
+
+.toolTip::before {
+  content: attr(data-tooltip);
+  font-size: 11px;
+  position: absolute;
+  left: 50%;
+  top: 130%;
+  transform: translateX(-50%);
+  background-color: rgb(95, 95, 95);
+  z-index: 1;
+  padding: 2px 6px;
+  border-radius: 5px;
+  display: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+.toolTip:hover::before {
+  display: block;
+}
